@@ -9,4 +9,4 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=builder /app/main .
-CMD ["./main"]
+CMD ["./main", "start"]
