@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-server
+  labels:
+    app: book-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-server
+  template:
+    metadata:
+      labels:
+        app: book-server
+    spec:
+      containers:
+        - name: book-server
+          image: book-server:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000  # Ensure this matches your Go server port
