@@ -7,10 +7,6 @@ hello: help
 	echo "Current Dockerhub Username: $(DOCKERHUBID)"
 	echo "Hello from Makefile"
 
-check:
-	echo $(DOCKERHUBID)
-	echo $(PROJECTNAME)
-
 start: build
 	echo "Running the Docker image...."
 	docker run -d -p 3000:3000 --rm $(DOCKERHUBID)/$(PROJECTNAME)
